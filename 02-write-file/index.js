@@ -21,3 +21,8 @@ stdin.on('data', (data) => {
   });
   stdout.write('Enter text: ');
 });
+
+process.on('SIGINT', () => {
+  stdout.write('By!');
+  exit();
+});
